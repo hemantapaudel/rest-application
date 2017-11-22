@@ -1,0 +1,23 @@
+
+
+1. Soap is a protocal and rest is a architectural style (Network base software architectur)
+2. In case of Soap, there is high degree of coupling, there is regid contact b/w client and service, if any change on either could leads the failure But
+   rest clinet is more like to a browser. 
+3. Soap is restricted to used xml format but rest can chose any format.
+
+4. sending the Json data over the network is cheaper then sending the xml data over network.
+
+5. Rest is stateless but soap can make state full
+
+6. Rest can be cacheable but soap is not
+
+7. Soap can use any tranport protocal but rest can't used any transport protocal
+
+8. Rest only used tranport level security (low security), but Soap support the WS-security which protect the message while creating to its consumption.
+
+9. Soap support ACID base transaction management for short lived transaction and Compensention base transaction for long live transaction management.
+
+10. building Soap web service required more bandwidth then rest application
+
+
+   

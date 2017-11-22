@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mycompany.core.rest.model.AccountDetailVO;
 
 @RestController
-@RequestMapping("accountservice")
+//@RequestMapping("accountservice")
 public class AccountController {
 	
 	@RequestMapping(
