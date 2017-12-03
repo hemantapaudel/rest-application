@@ -2,7 +2,6 @@ package com.mycompany.core.rest;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -10,20 +9,22 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.InputStreamBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.mycompany.core.rest.contextaccess.A;
+import com.mycompany.core.rest.contextaccess.C;
 
 @SpringBootApplication
 public class Application {
 
 	public static void main(String[] args) throws ClientProtocolException, IOException {
-		SpringApplication.run(Application.class, args);
+		 ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 		
 		
 		//File initialFile = new File("src/main/resources/soap vs rest.txt");
@@ -44,6 +45,15 @@ public class Application {
         String body = EntityUtils.toString(response.getEntity());
         System.out.println("status =="+status);
         System.out.println("body =="+body);
+        
+        
+        
+       
+
+		A a = context.getBean("a", A.class);
+		a.updateB();
+
+		System.out.println(context.getBean("c", C.class).getTest().getName());
         
 		
 	}
